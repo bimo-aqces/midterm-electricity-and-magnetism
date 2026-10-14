@@ -26,4 +26,10 @@ int main(){
     double force_124_y = force_12_y + force_14_y;
     std::cout << "force 124 component info: " << '\n' << force_124_x << '\n' << force_124_y << "\n\n";
 
+    double get_charge = coulomb_calculator.get_charge_current_time(false, 2, 3);
+    double get_current = coulomb_calculator.get_charge_current_time(1, false, 3);
+    double get_time = coulomb_calculator.get_charge_current_time(1, 2, false);
+    std::cout << get_charge << '\n';
+    std::cout << get_current << '\n';
+    std::cout << get_time<< '\n';
 }

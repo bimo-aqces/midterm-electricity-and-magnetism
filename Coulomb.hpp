@@ -24,6 +24,18 @@ class Coulomb{
             return coulomb_value * std::sin(radian_value);
         }
 
+        double get_charge_current_time(double charge, double current, double time){
+            if(charge && current && time == false){
+                return (charge / current);
+            }
+            else if(charge && current == false && time){
+                return (charge / time);
+            }
+            else{
+                return (current * time);
+            }
+        }
+
     private:
         static constexpr double coulomb_constant = 8.99e9;
         static constexpr double premittivity_constant = 8.85e-12;
