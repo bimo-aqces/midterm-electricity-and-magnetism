@@ -29,6 +29,17 @@ class ElectricField{
                 return (electric_field_value * std::sin(radian_value));
             }
         }
+        double get_field_force_charge(double electric_field,double force, double charge){
+            if(electric_field, force, charge==false){
+                return (force / electric_field);
+            }
+            else if(electric_field, force==false, charge){
+                return (electric_field * charge);
+            }
+            else{
+                return (force / charge);
+            }
+        }
 
     private:
         static constexpr double coulomb_constant = 8.99e9;
