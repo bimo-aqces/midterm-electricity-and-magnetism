@@ -3,8 +3,17 @@
 
 class ElectricField{
     public:
-        double get_electric_field(double charge, double distance) {
-            return (coulomb_constant * charge / pow(distance,2));
+        double get_field_charge_distance(double electric_field, double charge, double distance) {
+            if(electric_field, charge, distance == false){
+                return (sqrt((coulomb_constant * charge) / electric_field));
+            }
+            else if(electric_field, charge == false, distance){
+                return (electric_field * pow(distance, 2) / coulomb_constant);
+            }
+            else{
+                return (coulomb_constant * charge / pow(distance, 2));
+            }
+                
         }
         double get_electric_field_xcomponent(double electric_field_value, bool charge_type,double tetha){
             if(charge_type == true){

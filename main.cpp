@@ -42,11 +42,11 @@ int main(){
     // double q3 = 4;
     // double d = 2;
 
-    // double get_electric_field1_value = electric_field_calc.get_electric_field(q1, d);
+    // double get_electric_field1_value = electric_field_calc.get_field_charge_distance(false, q1, d);
     // std::cout << get_electric_field1_value << '\n';
-    // double get_electric_field2_value = electric_field_calc.get_electric_field(q2, d);
+    // double get_electric_field2_value = electric_field_calc.get_field_charge_distance(false, q2, d);
     // std::cout << get_electric_field2_value << '\n';
-    // double get_electric_field3_value = electric_field_calc.get_electric_field(q3, d);
+    // double get_electric_field3_value = electric_field_calc.get_field_charge_distance(false, q3, d);
     // std::cout << get_electric_field3_value << "\n\n";
 
     // double get_electric_field1_x = electric_field_calc.get_electric_field_xcomponent(get_electric_field1_value, true, 150);
