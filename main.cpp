@@ -63,4 +63,5 @@ int main(){
     // std::cout << get_electric_field3_x << '\n';
     // double get_electric_field3_y = electric_field_calc.get_electric_field_ycomponent(get_electric_field3_value, false, 30);
     // std::cout << get_electric_field3_y << "\n\n";
+    
 }
