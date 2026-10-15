@@ -4,10 +4,10 @@
 class ElectricPotential{
     public:
         double energy_charge_voltage(double energy, double charge, double voltage){
-            if(energy, charge, voltage == false){
+            if(energy && charge && voltage == false){
                 return (energy / charge);
             }
-            else if(energy, charge == false, voltage){
+            else if(energy && charge == false && voltage){
                 return (energy / voltage);
             }
             else{
@@ -15,7 +15,7 @@ class ElectricPotential{
             }
         }
         double get_energy_work(double energy, double work){
-            if(energy, work==false){
+            if(energy && work==false){
                 return (-energy);
             }
             else{

@@ -4,10 +4,10 @@
 class CurrentResistance{
     public:
         double get_voltage_current_resistance(double voltage, double current, double resistance){
-            if(voltage, current, resistance == false){
+            if(voltage && current && resistance == false){
                 return (voltage / current);
             }
-            else if(voltage, current == false, resistance){
+            else if(voltage && current == false && resistance){
                 return (voltage / resistance);
             }
             else{
@@ -30,7 +30,7 @@ class CurrentResistance{
             }
         }
         double get_conductivity_resistivity(double conductivity, double resistivity){
-            if(conductivity, resistivity == false){
+            if(conductivity && resistivity == false){
                 return (1 / conductivity);
             }
             else{
@@ -40,13 +40,13 @@ class CurrentResistance{
 
         double get_resistance_resistivity_long_surface(double resistance, double resistivity, double length, double surface)
         {
-            if(resistance, resistivity, length, surface == false){
+            if(resistance && resistivity && length && surface == false){
                 return ((resistivity * length) / resistance);
             }
-            else if(resistance, resistivity, length == false, surface){
+            else if(resistance && resistivity && length == false && surface){
                 return ((resistance * surface) / resistivity);
             }
-            else if(resistance, resistivity == false, length, surface){
+            else if(resistance && resistivity == false && length && surface){
                 return ((resistance * surface) / length);
             }
             else{
@@ -54,10 +54,10 @@ class CurrentResistance{
             }
         }
         double get_power_current_voltage(double power, double current, double voltage){
-            if(power, current, voltage==false){
+            if(power && current && voltage==false){
                 return (power / current);
             }
-            else if(power, current == false, voltage){
+            else if(power && current == false && voltage){
                 return (power / voltage);
             }
             else{
@@ -65,10 +65,10 @@ class CurrentResistance{
             }
         }
         double get_power_current_resistance(double power, double current, double resistance){
-            if(power, current, resistance == false){
+            if(power && current && resistance == false){
                 return (power / pow(current, 2));
             }
-            else if(power, current == false, resistance){
+            else if(power && current == false && resistance){
                 return (sqrt(power / resistance));
             }
             else{
@@ -77,11 +77,11 @@ class CurrentResistance{
         }
         double get_power_voltage_resistance(double power, double voltage, double resistance)
         {
-            if (power, voltage, resistance == false)
+            if (power && voltage && resistance == false)
             {
                 return (pow(voltage, 2)/power);
             }
-            else if (power, voltage == false, resistance)
+            else if (power && voltage == false && resistance)
             {
                 return (sqrt(power * resistance));
             }

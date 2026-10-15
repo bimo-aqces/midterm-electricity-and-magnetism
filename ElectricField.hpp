@@ -4,10 +4,10 @@
 class ElectricField{
     public:
         double get_field_charge_distance(double electric_field, double charge, double distance) {
-            if(electric_field, charge, distance == false){
+            if(electric_field && charge && distance == false){
                 return (sqrt((coulomb_constant * charge) / electric_field));
             }
-            else if(electric_field, charge == false, distance){
+            else if(electric_field && charge == false && distance){
                 return (electric_field * pow(distance, 2) / coulomb_constant);
             }
             else{
@@ -39,10 +39,10 @@ class ElectricField{
             }
         }
         double get_field_force_charge(double electric_field,double force, double charge){
-            if(electric_field, force, charge==false){
+            if(electric_field && force && charge==false){
                 return (force / electric_field);
             }
-            else if(electric_field, force==false, charge){
+            else if(electric_field && force==false && charge){
                 return (electric_field * charge);
             }
             else{

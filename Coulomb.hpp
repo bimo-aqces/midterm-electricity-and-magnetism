@@ -3,25 +3,46 @@
 
 class Coulomb{
     public:
-        double get_coulomb_force(double charge_1, bool charge_type_1, double charge_2, bool charge_type_2, double distance){
-            if (charge_type_1 == true && charge_type_2 == true && charge_1 < charge_2 || charge_type_1 == false && charge_type_2 == false && charge_1 < charge_2)
+        double get_force_charge1_charge2_distance(double force, double charge_1, double charge_2, double distance){
+            if(force && charge_1 && charge_2 && distance == false){
+                return (sqrt((coulomb_constant * charge_1 * charge_2) / pow(distance, 2)));
+            }
+            else if(force && charge_1 && charge_2 == false && distance){
+                return ((coulomb_constant * pow(distance, 2)) / (coulomb_constant * charge_1));
+            }
+            else if (force && charge_1 == false && charge_2 && distance)
             {
-                return -(coulomb_constant * charge_1 * charge_2) / (pow(distance, 2));
+                return ((coulomb_constant * pow(distance, 2)) / (coulomb_constant * charge_2));
             }
             else{
-                return (coulomb_constant * charge_1 * charge_2) / (pow(distance, 2));
+                return ((coulomb_constant * charge_1 * charge_2) / pow(distance, 2));
             }
         }
 
-        double get_coulomb_force_xcomponent(double coulomb_value, double tetha){
-            double radian_value = tetha * (M_PI / 180);
-            return coulomb_value * std::cos(radian_value);
+        double get_coulomb_force_xcomponent(double coulomb_value, bool charge_type1, bool charge_type2,double tetha){
+            if(charge_type1 == charge_type2){
+                double radian_value = (tetha+180) * (M_PI / 180);
+                return coulomb_value * std::cos(radian_value);
+            }
+            else{
+                double radian_value = tetha * (M_PI / 180);
+                return coulomb_value * std::cos(radian_value);
+            }
+            
         }
 
-        double get_coulomb_force_ycomponent(double coulomb_value, double tetha)
+        double get_coulomb_force_ycomponent(double coulomb_value, bool charge_type1, bool charge_type2, double tetha)
         {
-            double radian_value = tetha * (M_PI / 180);
-            return coulomb_value * std::sin(radian_value);
+            if (charge_type1 == charge_type2)
+            {
+                double radian_value = (tetha + 180) * (M_PI / 180);
+                return coulomb_value * std::sin(radian_value);
+            }
+            else
+            {
+                double radian_value = tetha * (M_PI / 180);
+                return coulomb_value * std::sin(radian_value);
+            }
         }
 
         double get_charge_current_time(double charge, double current, double time){

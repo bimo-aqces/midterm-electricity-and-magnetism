@@ -4,10 +4,10 @@
 class Capacitance{
     public:
         double get_charge_capacitance_voltage(double charge, double capacitance, double voltage){
-            if (charge, capacitance, voltage == false){
+            if (charge && capacitance && voltage == false){
                 return (capacitance / charge);
             }
-            else if(charge, capacitance == false, voltage){
+            else if(charge && capacitance == false && voltage){
                 return (charge, voltage);
             }
             else{
@@ -15,10 +15,10 @@ class Capacitance{
             }
         }
         double get_capacitance_surface_distance(double capacitance, double surface, double distance){
-            if(capacitance, surface, distance == false){
+            if(capacitance && surface && distance == false){
                 return ((premittivity_constant * surface) / capacitance);
             }
-            else if(capacitance, surface == false, distance){
+            else if(capacitance && surface == false && distance){
                 return ((capacitance * distance) / premittivity_constant);
             }
             else{
@@ -44,10 +44,10 @@ class Capacitance{
             return total;
         }
         double get_energy_charge_capacitance(double energy, double charge, double capacitance){
-            if(energy, charge, capacitance == false){
+            if(energy && charge && capacitance == false){
                 return ((pow(charge, 2)) / (2 * capacitance));
             }
-            else if(energy, charge == false, capacitance){
+            else if(energy && charge == false && capacitance){
                 return (sqrt(2 * charge * capacitance));
             }
             else{
@@ -55,10 +55,10 @@ class Capacitance{
             }
         }
         double get_energy_capacitance_voltage(double energy, double capacitance, double voltage){
-            if(energy, capacitance, voltage == false){
+            if(energy && capacitance && voltage == false){
                 return (sqrt(2 * energy * capacitance));
             }
-            else if(energy, capacitance == false, voltage){
+            else if(energy && capacitance == false && voltage){
                 return ((2 * energy) / (pow(voltage, 2)));
             }
             else{
