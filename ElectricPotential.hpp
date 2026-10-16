@@ -22,6 +22,11 @@ class ElectricPotential{
                 return (-work);
             }
         }
+        double get_work_force_distance_tetha(double work, double force, double distance, double tetha){
+            double radian_value = (tetha) * (M_PI / 180);
+            return (force * distance * std::cos(radian_value));
+        }
+        
     private:
         static constexpr double coulomb_constant = 8.99e9;
         static constexpr double premittivity_constant = 8.85e-12;

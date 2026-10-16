@@ -14,7 +14,7 @@ class Capacitance{
                 return (capacitance * voltage);
             }
         }
-        double get_capacitance_surface_distance(double capacitance, double surface, double distance){
+        double get_capacitance_parallelplate_surface_distance(double capacitance, double surface, double distance){
             if(capacitance && surface && distance == false){
                 return ((premittivity_constant * surface) / capacitance);
             }
@@ -23,6 +23,14 @@ class Capacitance{
             }
             else{
                 return ((premittivity_constant * surface) / distance);
+            }
+        }
+        double get_capacitance_isolatedsphere_radius(double capacitance, double radius){
+            if(capacitance && radius == false){
+                return (capacitance / (4 * M_PI * premittivity_constant));
+            }
+            else{
+                return (4 * M_PI * premittivity_constant * radius);
             }
         }
         double get_capacitance_parallel(std::initializer_list<double> every_value){
@@ -39,19 +47,19 @@ class Capacitance{
             for (double value : every_value)
             {
                 temp += (1/value);
-                total = 1 / total;
+                total = 1 / temp;
             }
             return total;
         }
         double get_energy_charge_capacitance(double energy, double charge, double capacitance){
             if(energy && charge && capacitance == false){
-                return ((pow(charge, 2)) / (2 * capacitance));
+                return ((pow(charge, 2)) / (2 * energy));
             }
             else if(energy && charge == false && capacitance){
-                return (sqrt(2 * charge * capacitance));
+                return (sqrt(2 * energy * capacitance));
             }
             else{
-                return ((pow(charge, 2)) / (2 * energy));
+                return ((pow(charge, 2)) / (2 * capacitance));
             }
         }
         double get_energy_capacitance_voltage(double energy, double capacitance, double voltage){

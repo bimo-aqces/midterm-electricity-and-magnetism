@@ -17,10 +17,17 @@ class ElectricField{
         }
         double get_electric_field_xcomponent(double electric_field_value, bool charge_type,double tetha){
             if(charge_type == true){
+                if(tetha == 90 || tetha == 270){
+                    return 0;
+                }
                 double radian_value = (tetha + 180) * (M_PI / 180);
                 return (electric_field_value * std::cos(radian_value));
             }
             else{
+                if (tetha == 90 || tetha == 270)
+                {
+                    return 0;
+                }
                 double radian_value = (tetha) * (M_PI / 180);
                 return (electric_field_value * std::cos(radian_value));
             }
@@ -29,11 +36,18 @@ class ElectricField{
         {
             if (charge_type == true)
             {
+                if(tetha == 0 || tetha == 180 || tetha == 360){
+                    return 0;
+                }
                 double radian_value = (tetha + 180) * (M_PI / 180);
                 return (electric_field_value * std::sin(radian_value));
             }
             else
             {
+                if (tetha == 0 || tetha == 180 || tetha == 360)
+                {
+                    return 0;
+                }
                 double radian_value = (tetha) * (M_PI / 180);
                 return (electric_field_value * std::sin(radian_value));
             }
